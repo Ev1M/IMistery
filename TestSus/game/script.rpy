@@ -73,7 +73,6 @@ label start:
                     
                 label Vilmer:
                     show Vilmer
-                    
                     python:
                         povname = renpy.input("What is your name?")
                         povname = povname.strip()
@@ -81,14 +80,17 @@ label start:
                         if not povname:
                             povname = "Dog Shit"
 
-                    
+                    pov "hehehehheheheh mindreårige"
                     scene prat
                     jump klasserom_intro
 
                 label Jonas:
                     joo "Heisann hopass"
 
+
                     scene prat
+                label Pov:
+
                     jump BordEn
 
                 label klasserom_intro:
