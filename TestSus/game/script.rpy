@@ -73,14 +73,11 @@ label start:
                     
                 label Vilmer:
                     show Vilmer
-                    python:
-                        povname = renpy.input("What is your name?")
+                    python:                    
+                        povname = renpy.input("Yo, velkommen til IM, det er ingen jenter her, men vi klarer oss. Hva heter du?")
                         povname = povname.strip()
 
-                        if not povname:
-                            povname = "Dog Shit"
-
-                    pov "hehehehheheheh mindreårige"
+                    vh "ok nice [povname]"
                     scene prat
                     jump klasserom_intro
 
