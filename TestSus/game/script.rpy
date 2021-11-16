@@ -79,7 +79,7 @@ label start:
                         povname = povname.strip()
 
                         if not povname:
-                            povname = "Pat Smith"
+                            povname = "Dog Shit"
 
                     
                     scene prat
