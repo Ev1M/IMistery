@@ -6,7 +6,7 @@ define em = Character("Even")
 define vh = Character("Vilmer")
 define ab = Character("Aslak")
 define joo = Character("Jonas")
-
+# ANIMATIONS
 # Erik animation
 image Erik animated:
     block:
@@ -17,13 +17,53 @@ image Erik animated:
         repeat 12
     "erik/Erik_Resting.png"
 
+# Vilomer animation
+image Vilmer animated:
+    block:
+        "vilmer/VilmerTalk.png"
+        pause 0.1
+        "vilmer/VilmerTalk2.png"
+        pause 0.1
+        repeat 12
+    "vilmer/VilmerResting.png"
+
+# Aslak animation
+image Aslak animated:
+    block:
+        "aslak/AslakTalk.png"
+        pause 0.1
+        "aslak/AslakTalk2.png"
+        pause 0.1
+        repeat 12
+    "aslak/AslakResting.png"
+
+# Even animation
+image Even animated:
+    block:
+        "even/EvenTalk.png"
+        pause 0.1
+        "even/EvenTalk2.png"
+        pause 0.1
+        repeat 12
+    "even/EvenResting.png"
+# Even animation 2 :3
+image Even animated:
+    block:
+        "even/EvenTop.png"
+        pause 0.1
+        "even/EvenMiddle.png"
+        pause 0.1
+        "even/EvenBottom.png"
+        pause 0.1
+        repeat 9
+    "even/EvenTalk.png"
+
 
 label start:
     scene bg heisaapen
 
     show Erik animated at right:
         xalign 0.75
-        yalign 0.25
         yalign 0.15
 
     voice "audio/gibberish_sound_effect.mp3"
@@ -56,23 +96,27 @@ label start:
                 call screen AEJVbord
 
                 label Aslak:
-                    show Aslak
+                    show Aslak animated
                     ab "heisa"
-
-                    show Even
+                    hide Aslak animated
+                    show Even animated
                     em "loloiol!"
 
                     scene prat
                     jump BordEn
 
                 label Even:
+                    show Even animated
                     em "Heisann hopass"
 
                     scene prat
                     jump BordEn
                     
                 label Vilmer:
-                    show Vilmer
+                    show Vilmer animated at right:
+                        xalign 0.75
+                        yalign 0.25
+                        yalign 0.15
                     python:                    
                         povname = renpy.input("Yo, velkommen til IM, det er ingen jenter her, men vi klarer oss. Hva heter du?")
                         povname = povname.strip()
