@@ -65,18 +65,16 @@ image EvenTwerk:
         repeat 9
     "even/EvenTalk.png"
 
-
+#Dag 1
+#Intro
 label start:
     scene bg heisaapen
-    show Erik animated at right:
-        xalign 0.75
-        yalign 0.25
-        yalign 0.15
+    show Erik
     voice "audio/gibberish_sound_effect.mp3"
     c "Heisann, velkommen til Kuben’s Informatikk linje. Så hyggelig at du ville starte hos oss. Gå til "
     hide Erik
 
-
+#Kan gå hvor man vil
 label idleEtterHeis:
     call screen velgHvorEtterHeis
     label Lererkontor:
@@ -84,28 +82,30 @@ label idleEtterHeis:
         show Christian
         c "dette er lærer kontoret"
         jump idleEtterHeis
-    
+    #Du og Christian ser i IM klasserommene
     label ImKlasserom:
         scene ImKlasserom
         show Christian
         c "Her har vi IM klasserommene for A, B og C klassen. De er i praksis nå, så du vil dessverre ikke få møtt dem "
         jump idleEtterHeis
-    
+    #Dag 1 Morning fellesareal
     label D1Mfellesareal:
         call screen D1Mfellesareal
-
+        #Bordet hvor Aslak, Even, Jonas og Vilmer sitter.
         label BordEn : 
             call screen AEJVbord
 
             label Aslak:
                 show Aslak
                 ab "heisa"
+                hide Aslak
                 show Even
                 em "loloiol!"
                 scene prat
                 jump BordEn
             
             label Even:
+                show Even
                 em "Heisann hopass"
                 scene prat
                 jump BordEn
@@ -128,11 +128,11 @@ label idleEtterHeis:
                 scene prat
                 jump BordEn
             
-
+    #Her starter sekvesen for å finne Tias død
     label mordEn:
 
         scene utenforklasserommet
-        
+        #Prat mellom KG og Christian
         show Christian at right 
         c "Inn her er toalettene, det kan være greit å vite i tilfelle …"
         show Karl-Gustav at left
@@ -143,7 +143,7 @@ label idleEtterHeis:
         c "Kan du ta med [povname] inn til klasserommet for å hilse på de andre?"
         kg "Selvfølgelig!"
 
-
+        #Opprop uten Tias
         scene klasserom
         show Erik
         hmm "Hallo hallo! Erik heter jeg. Velkommen skal du være til IMI. Vi skal akkurat til å ta opprop"
@@ -156,9 +156,10 @@ label idleEtterHeis:
         e "Tias!"
         pause 2.0
         e "Ingen Tias?"
-        e "hemm … [povname], kunne du tatt å se om du finner Tias"
+        e "hemm … [povname], kunne du sett om du finner Tias"
         pov "Den er grei"
-
+        
+        #Her kan du begynne å lete etter Tias
         label friUtforsk:
             call screen klasserom
             
@@ -180,6 +181,24 @@ label idleEtterHeis:
                 show Karl-Gustav
                 kg "Jeg så han ikke på do ista"
                 jump friUtforsk
+        
+            label D1Dfellesareal:
+                call screen D1Dfellesareal
+            
+            label leterEtterTias:
+                call screen LeterEtterTiasGang
+                label LererkontorLeter:
+                    scene lærerkontor
+                    "*du leter litt*"
+                    pov "Ingenting her"
+                    jump leterEtterTias
+    
+            label ImKlasseromLeter:
+                scene ImKlasserom
+                "*du leter litt*"
+                pov "Ingenting her"
+                jump leterEtterTias
+
 
 
 
