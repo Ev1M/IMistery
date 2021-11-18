@@ -96,17 +96,21 @@ label idleEtterHeis:
             call screen AEJVbord
 
             label Aslak:
+                hide Vilmer
+                hide Jonas
+                hide Even
                 show Aslak
-                ab "heisa"
-                hide Aslak
-                show Even
-                em "loloiol!"
-                scene prat
+                ab "ENDELIG! En ny kar her! *rister av glede* ser fram til en ny person, begynner å bli lei av 	folk som Tias, sånne folk bli bare kjedelige etterhvert"
+                "{i}OK?!{/i}"
                 jump BordEn
             
             #Prate med Even på morgen.
             label Even:
-                show Even
+                hide Vilmer
+                hide Aslak
+                hide Jonas
+                hide Even
+                show EvenTwerk
                 menu:
                     "Hei":
                         jump pratmdEv1
@@ -115,6 +119,9 @@ label idleEtterHeis:
                         jump LoLnei
 
                 label pratmdEv1:
+                    hide EvenTwerk
+                    hide Even
+                    show Even
                     em "hei, spiller du league of legends?"
                     menu:
                         "Ja":
@@ -127,6 +134,9 @@ label idleEtterHeis:
                             jump LoLnei
                     
                     label LoLja:
+                        hide EvenTwerk
+                        hide Even
+                        show Even
                         $menu_flag = True
                         em "Jippi, hva slags champs spiller du?"
                         menu:
@@ -142,6 +152,7 @@ label idleEtterHeis:
                         hide Even
                     
                     label LoLnei:
+                        hide EvenTwerk
                         hide Even
                         show Even
                         $menu_flag = False
@@ -150,14 +161,20 @@ label idleEtterHeis:
                         hide Even
                     
                     label aksepter:
+                        hide EvenTwerk
                         $menu_flag = False
-                        e "Acceptable"
+                        em "Acceptable"
                         jump BordEn
                         hide Even
                     
+                    hide Even
                     scene prat
                     
+                
                 label Vilmer:
+                    hide Even
+                    hide Aslak
+                    hide Jonas
                     show Vilmer
                     vh "Yo, velkommen til IM, det er ingen jenter her, men vi klarer oss. Hva heter du?"
                     
@@ -165,13 +182,34 @@ label idleEtterHeis:
                         povname = renpy.input("Skriv navnet ditt:")
                         povname = povname.strip()
 
-                    vh "ok nice [povname]"
+                    vh "må si det var meget hyggelig å hilse på deg [povname]"
+                    vh "check out the shuffle *stokker kort*"
+                    menu: 
+                        "imponerende":
+                            jump VillyTakk
+                        "sett bedre":
+                            jump VillySint
+                        
+                    label VillyTakk:
+                        vh "takker takker"
+                        jump timeSnart
+
+                    label VillySint:
+                        vh "eeh jaaa"  
+                        jump timeSnart
+
+                    label timeSnart:
+                        vh "det er time nå, så vi bør jette"
+                        jump mordEn
                     
                     scene prat
-                    jump mordEn
-                
+                    
                 label Jonas:
-                    joo "Heisann hopass"
+                    hide Vilmer
+                    hide Aslak
+                    hide Even
+                    show Jonas
+                    joo "Yo! Sorry jeg måtte løpe, rakk så 	vitt bussen, men er her nå. Jeg heter Jonas, håper du er litt effektiv for det er ikke jeg, men vi skal nok hygge oss uansett"
                     scene prat
                     jump BordEn
             
@@ -231,6 +269,9 @@ label idleEtterHeis:
         
             label D1Dfellesareal:
                 call screen D1Dfellesareal
+
+            label gangMotToalett:
+                call screen MotToalettD1
             
             label leterEtterTias:
                 call screen LeterEtterTiasGang
@@ -245,14 +286,3 @@ label idleEtterHeis:
                 "*du leter litt*"
                 pov "Ingenting her"
                 jump leterEtterTias
-
-
-
-
-
-
-
-
- 
- 
-

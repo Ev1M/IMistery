@@ -26,6 +26,11 @@ screen D1Dfellesareal():
     imagemap:
         ground "fellesareal.jpg"
         hotspot(2679, 315, 425, 977) action Jump("leterEtterTias") alt "leterEtterTias"
+        hotspot(3085, 1150, 263, 337) action Jump("gangMotToalett") alt "gangMotToalett"
+
+screen MotToalettD1():
+    imagemap:
+        ground "utenforklasserommet.jpg"
 
 screen LeterEtterTiasGang() :
     imagemap:
