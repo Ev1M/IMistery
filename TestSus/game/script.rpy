@@ -104,29 +104,76 @@ label idleEtterHeis:
                 scene prat
                 jump BordEn
             
+            #Prate med Even på morgen.
             label Even:
                 show Even
-                em "Heisann hopass"
-                scene prat
-                jump BordEn
-                
-            label Vilmer:
-                show Vilmer
-                vh "Yo, velkommen til IM, det er ingen jenter her, men vi klarer oss. Hva heter du?"
-                
-                python:
-                    povname = renpy.input("Skriv navnet ditt:")
-                    povname = povname.strip()
+                menu:
+                    "Hei":
+                        jump pratmdEv1
+                    
+                    "...":
+                        jump LoLnei
 
-                vh "ok nice [povname]"
+                label pratmdEv1:
+                    em "hei, spiller du league of legends?"
+                    menu:
+                        "Ja":
+                            jump LoLja
+                        
+                        "Nei":
+                            jump LoLnei
+                        
+                        "...":
+                            jump LoLnei
+                    
+                    label LoLja:
+                        $menu_flag = True
+                        em "Jippi, hva slags champs spiller du?"
+                        menu:
+                            "Assasins":
+                                jump aksepter
+                            "Bruisers":
+                                jump aksepter
+                            "Tanks":
+                                jump aksepter
+                            "Mages":
+                                jump LoLnei
+
+                        hide Even
+                    
+                    label LoLnei:
+                        hide Even
+                        show Even
+                        $menu_flag = False
+                        em "Din stygge dritt, hvorfor kom du hit da!? *sparker deg i ansiktet, du får vondt*"
+                        jump BordEn
+                        hide Even
+                    
+                    label aksepter:
+                        $menu_flag = False
+                        e "Acceptable"
+                        jump BordEn
+                        hide Even
+                    
+                    scene prat
+                    
+                label Vilmer:
+                    show Vilmer
+                    vh "Yo, velkommen til IM, det er ingen jenter her, men vi klarer oss. Hva heter du?"
+                    
+                    python:
+                        povname = renpy.input("Skriv navnet ditt:")
+                        povname = povname.strip()
+
+                    vh "ok nice [povname]"
+                    
+                    scene prat
+                    jump mordEn
                 
-                scene prat
-                jump mordEn
-            
-            label Jonas:
-                joo "Heisann hopass"
-                scene prat
-                jump BordEn
+                label Jonas:
+                    joo "Heisann hopass"
+                    scene prat
+                    jump BordEn
             
     #Her starter sekvesen for å finne Tias død
     label mordEn:
@@ -158,7 +205,7 @@ label idleEtterHeis:
         e "Ingen Tias?"
         e "hemm … [povname], kunne du sett om du finner Tias"
         pov "Den er grei"
-        
+
         #Her kan du begynne å lete etter Tias
         label friUtforsk:
             call screen klasserom
