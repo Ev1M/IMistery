@@ -14,6 +14,7 @@ define jk = Character("JonasK")
 define sp = Character("Srimon")
 define al = Character("Arin")
 # ANIMATIONS
+# Lærer animations
 # Erik animation
 image Erik:
     block:
@@ -23,6 +24,27 @@ image Erik:
         pause 0.1
         repeat 12
     "erik/Erik_Resting.png"
+
+# Christian 
+image Christian:
+    block:
+        "christian/ChristianTalk.png"
+        pause 0.15
+        "christian/ChristianTalk2.png"
+        pause 0.1
+        repeat 12
+    "christian/ChristianTalk.png"
+
+# Elever Animation
+# Jonas animation
+image Jonas:
+    block:
+        "jonas/JonasTalk.png"
+        pause 0.15
+        "jonas/JonasTalk2.png"
+        pause 0.1
+        repeat 12
+    "jonas/JonasTalk.png"
 
 # Vilomer animation
 image Vilmer:
@@ -69,10 +91,10 @@ image EvenTwerk:
 #Intro
 label start:
     scene bg heisaapen
-    show Erik
+    show Jonas
     voice "audio/gibberish_sound_effect.mp3"
     c "Heisann, velkommen til Kuben’s Informatikk linje. Så hyggelig at du ville starte hos oss. Gå til "
-    hide Erik
+    hide Christian
 
 #Kan gå hvor man vil
 label idleEtterHeis:
@@ -137,6 +159,8 @@ label idleEtterHeis:
         c "Inn her er toalettene, det kan være greit å vite i tilfelle …"
         show Karl-Gustav at left
         kg "Hallo"
+        hide Christian
+        show Christian
         c "Hallo KG! Dette er din nye klassekamerat [povname]!"
         kg "..."
         kg "Jeg heter Karl-Gustav"
