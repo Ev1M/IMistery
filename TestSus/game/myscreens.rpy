@@ -36,6 +36,7 @@ screen LeterEtterTiasGang() :
         hotspot(1580, 1895, 380, 325) action Jump("D1Dfellesareal")
         hotspot(2950, 593, 353, 1645) action Jump("ImKlasseromLeter")
 
+        
 
 screen klasserom():
     imagemap:

@@ -67,7 +67,7 @@ image Aslak:
     "aslak/AslakResting.png"
 
 # Even animation
-image Even:
+image Even1:
     block:
         "even/EvenTalk.png"
         pause 0.1
@@ -75,8 +75,8 @@ image Even:
         pause 0.1
         repeat 12
     "even/EvenResting.png"
-# Even animation 2 :3
-image EvenTwerk:
+# Even animation men bedre :)
+image Even:
     block:
         "even/EvenTop.png"
         pause 0.1
@@ -86,9 +86,20 @@ image EvenTwerk:
         pause 0.1
         repeat 9
     "even/EvenTalk.png"
+# Janus animation
+image Jonas:
+    block:
+        "jonas/jonasResting.png"
+        pause 0.1
+        "jonas/jonasTalk2.png"
+        pause 0.1
+        repeat 9
+    "jonas/JonasResting.png"
+
 
 #Dag 1
 #Intro
+
 label start:
     scene bg heisaapen
     show Jonas
@@ -113,10 +124,12 @@ label idleEtterHeis:
     #Dag 1 Morning fellesareal
     label D1Mfellesareal:
         call screen D1Mfellesareal
-        #Bordet hvor Aslak, Even, Jonas og Vilmer sitter.
-        label BordEn : 
-            call screen AEJVbord
 
+        #Bordet hvor Aslak, Even, Jonas og Vilmer sitter.
+        label BordEn: 
+            call screen AEJVbord
+            show Even
+            em "loloiol!"
             label Aslak:
                 show Aslak
                 ab "heisa"
@@ -146,6 +159,7 @@ label idleEtterHeis:
                 jump mordEn
             
             label Jonas:
+                show Jonas
                 joo "Heisann hopass"
                 scene prat
                 jump BordEn
