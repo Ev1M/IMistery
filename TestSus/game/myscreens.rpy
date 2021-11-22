@@ -24,13 +24,17 @@ screen AEJVbord() :
 
 screen D1Dfellesareal():
     imagemap:
-        ground "fellesareal.jpg"
+        ground "fellesareal_letetias.jpg"
         hotspot(2679, 315, 425, 977) action Jump("leterEtterTias") alt "leterEtterTias"
         hotspot(3085, 1150, 263, 337) action Jump("gangMotToalett") alt "gangMotToalett"
 
 screen MotToalettD1():
     imagemap:
-        ground "utenforklasserommet.jpg"
+        ground "LeteMotToalett.jpg"
+        hover "LeteMotToalett_hover.jpg"
+
+        hotspot (115,1158,465,428) action jump("")
+        hotspot (2872,1168,520,408) action
 
 screen LeterEtterTiasGang() :
     imagemap:
