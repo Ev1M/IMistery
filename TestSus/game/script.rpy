@@ -102,7 +102,7 @@ image Jonas:
 
 label start:
     scene bg heisaapen
-    show Jonas
+    show Christian
     voice "audio/gibberish_sound_effect.mp3"
     c "Heisann, velkommen til Kuben’s Informatikk linje. Så hyggelig at du ville starte hos oss. Gå til "
     hide Christian
@@ -114,6 +114,7 @@ label idleEtterHeis:
         scene lærerkontor
         show Christian
         c "dette er lærer kontoret"
+        hide Christian
         jump idleEtterHeis
     #Du og Christian ser i IM klasserommene
     label ImKlasserom:
@@ -127,15 +128,18 @@ label idleEtterHeis:
 
         #Bordet hvor Aslak, Even, Jonas og Vilmer sitter.
         label BordEn: 
+            show Even
             call screen AEJVbord
             show Even
             em "loloiol!"
+
             label Aslak:
                 show Aslak
                 ab "heisa"
                 hide Aslak
                 show Even
                 em "loloiol!"
+                hide Even
                 scene prat
                 jump BordEn
             
