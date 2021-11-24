@@ -384,6 +384,7 @@ label idleEtterHeis:
                     xalign 0.3
                     ycenter 0.639
                 vh "check out the shuffle *stokker kort*"
+                hide Arms
                 hide Shuffle
                 menu: 
                     "imponerende":
@@ -504,14 +505,18 @@ label mordEn:
             label gangMotToalett:
                 call screen MotToalettD1
             
-            label Toalett:
-                call screen ToalettInteract
-            
+            label ToalettEn:
+                call screen toalettEn
+            label ToalettTo:
+                call screen toalettTo
+            label ToalettTre:
+                call screen toalettTre
+
             label Toalett1:
                 scene toalett-tomt
                 "*du leter litt*"
                 pov "Ingenting her"
-                jump Toalett
+                jump ToalettTre
             
             label Toalett2:
                 scene toalett-tomt
@@ -519,13 +524,13 @@ label mordEn:
                 show Even twerk animated
                 pov "WTF"
                 em "Gå ut kompis!"
-                jump Toalett
+                jump ToalettTre
 
             label Toalett3:
                 scene toalett-tomt
                 "*du leter litt*"
                 pov "Ingenting her"
-                jump Toalett
+                jump ToalettTre
             
             label ToalettDead:
                 scene tias-død

@@ -34,7 +34,32 @@ screen MotToalettD1():
         hover "LeteMotToalett_hover.jpg"
 
         hotspot (115,1158,465,428) action Jump("D1Dfellesareal")
-        hotspot (2872,1168,520,408) action Jump ("Toalett")
+        hotspot (2872,1168,520,408) action Jump ("ToalettEn")
+
+screen toalettEn():
+    imagemap:
+        ground "bg ToalettEn.png"
+        hover "bg ToalettEn_hover.png"
+
+        hotspot (1620,712,523,1300) action Jump ("ToalettTo")
+        hotspot (98,1023,513,361) action Jump("MotToalettD1")
+
+
+screen toalettTo():
+    imagemap:
+        ground "bg ToalettTo.png"
+        hover "bg ToalettTo_hover.png"
+
+        hotspot (1536,1721,374,449) action Jump("toalettEn")
+        hotspot (1677,850,216,844) action Jump("ToalettTre")
+
+screen toalettTre():
+    imagemap:
+        ground "ToalettTre.jpg"
+        hotspot (2550,350,630,1970) action Jump ("Toalett1")
+        hotspot (1965,600,310,1715) action Jump ("Toalett2")
+        hotspot (1650,700,150,1529) action Jump ("Toalett3")
+        hotspot (1450,765,110,1200) action Jump ("ToalettDead")
 
 screen LeterEtterTiasGang() :
     imagemap:
@@ -57,13 +82,7 @@ screen klasserom():
         hotspot (1441,1843,419,371) action Jump ("D1Dfellesareal")
 
 
-screen ToalettInteract():
-    imagemap:
-        ground "ToalettTre.jpg"
-        hotspot (2550,350,630,1970) action Jump ("Toalett1")
-        hotspot (1965,600,310,1715) action Jump ("Toalett2")
-        hotspot (1650,700,150,1529) action Jump ("Toalett3")
-        hotspot (1450,765,110,1200) action Jump ("ToalettDead")
+
 
 
 
