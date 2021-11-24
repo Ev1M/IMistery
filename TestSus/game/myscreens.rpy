@@ -50,18 +50,22 @@ screen toalettTo():
         ground "bg ToalettTo.png"
         hover "bg ToalettTo_hover.png"
 
-        hotspot (1536,1721,374,449) action Jump("toalettEn")
+        hotspot (1536,1721,374,449) action Jump("ToalettEn")
         hotspot (1677,850,216,844) action Jump("ToalettTre")
 
 screen toalettTre():
     imagemap:
-        ground "ToalettTre.jpg"
-        hotspot (2550,350,630,1970) action Jump ("Toalett1")
-        hotspot (1965,600,310,1715) action Jump ("Toalett2")
-        hotspot (1650,700,150,1529) action Jump ("Toalett3")
-        hotspot (1450,765,110,1200) action Jump ("ToalettDead")
+        ground "ToalettTre.png"
+        hover "ToalettTre_hover.png"
 
-screen LeterEtterTiasGang() :
+        hotspot (1556,1958,348,303) action Jump("ToalettTo")
+        hotspot (2511,125,695,2163) action Jump("Toalett1")
+        hotspot (1944,412,371,1809) action Jump("Toalett2")
+        hotspot (1644,580,212,1317) action Jump("Toalett3")
+        hotspot (1472,709,134,1221) action Jump("ToalettDead")
+
+
+screen LeterEtterTiasGang():
     imagemap:
         ground "gang.jpg"
         hover "gang_hover.jpg"
@@ -69,6 +73,7 @@ screen LeterEtterTiasGang() :
         hotspot(980, 700, 65, 1041) action Jump("LererkontorLeter")
         hotspot(1580, 1895, 380, 325) action Jump("D1Dfellesareal")
         hotspot(2950, 593, 353, 1645) action Jump("ImKlasseromLeter")
+
 
 
 screen klasserom():
