@@ -106,6 +106,8 @@ image Vilmer animated:
     "vilmer/vilmerResting.png"
     
 # vilmer Shuffle
+image Arms:
+    "shuffle/ARMS.png"
 image Shuffle:
     block:
         "shuffle/shuffle_adobespark.png"
@@ -376,6 +378,9 @@ label idleEtterHeis:
                     povname = povname.strip()
 
                 vh "må si det var meget hyggelig å hilse på deg [povname]"
+                show Arms:
+                    xalign 0.33
+                    ycenter 0.99
                 show Shuffle:
                     xalign 0.3
                     ycenter 0.639
