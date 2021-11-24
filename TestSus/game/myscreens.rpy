@@ -34,6 +34,7 @@ screen MotToalettD1():
         hover "LeteMotToalett_hover.jpg"
 
         hotspot (115,1158,465,428) action Jump("D1Dfellesareal")
+        hotspot (1537,572,553,1490) action Jump("friUtforsk")
         hotspot (2872,1168,520,408) action Jump ("ToalettEn")
 
 screen toalettEn():
@@ -56,6 +57,7 @@ screen toalettTo():
 screen toalettTre():
     imagemap:
         ground "ToalettTre.jpg"
+        hotspot (437,400,930,1767) action Jump ("gangMotToalett")
         hotspot (2550,350,630,1970) action Jump ("Toalett1")
         hotspot (1965,600,310,1715) action Jump ("Toalett2")
         hotspot (1650,700,150,1529) action Jump ("Toalett3")
