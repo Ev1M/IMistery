@@ -43,7 +43,7 @@ screen toalettEn():
         hover "bg ToalettEn_hover.png"
 
         hotspot (1620,712,523,1300) action Jump ("ToalettTo")
-        hotspot (98,1023,513,361) action Jump("MotToalettD1")
+        hotspot (98,1023,513,361) action Jump("gangMotToalett")
 
 
 screen toalettTo():
@@ -85,7 +85,7 @@ screen klasserom():
         hotspot (850,1336,355,200) action Jump ("Srimon")
         hotspot (1266,1208,327,193) action Jump ("Arin")
         hotspot (2157,1141,327,202) action Jump ("KarlGangster")
-        hotspot (1441,1843,419,371) action Jump ("D1Dfellesareal")
+        hotspot (1441,1843,419,371) action Jump ("gangMotToalett")
 
 
 

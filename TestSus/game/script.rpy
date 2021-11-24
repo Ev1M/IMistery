@@ -492,6 +492,9 @@ label mordEn:
                 "*du leter litt*"
                 pov "Ingenting her"
                 jump leterEtterTias
+        if tias == "død":
+            pov "mamma mia"
+            jump hjelp
 
         label ImKlasseromLeter:
             scene ImKlasserom
@@ -536,10 +539,10 @@ label mordEn:
                 scene tias-død
                 pov "Å dvæen!"
                 pov "Er det Tias? og er han død?!"
-                jump Hjelp
-            
-        label Hjelp:
-            scene klasserom
-            show Erik animated
-            e "Whazzehell?!"
-            e "Er Tias død på toalezzet?"
+                pov "SHIT! Jeg må si ifra til Erik."
+                $ tias = "død"
+                jump ToalettTre
+
+        label hjelp:
+            pov "TIAS ER DRUKNET PÅ DO"
+            e "HÆ!"
