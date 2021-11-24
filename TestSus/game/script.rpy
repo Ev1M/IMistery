@@ -1,5 +1,4 @@
-﻿# define characters
-define pov = Character("[povname]")
+﻿define pov = Character("[povname]")
 define hmm = Character("?????")
 define c = Character("Christian")
 define e = Character("Erik")
@@ -473,17 +472,12 @@ label mordEn:
             show Arin animated
             al "Jeg tror han dro på kiwi med Peder"
             jump friUtforsk
+
         label KarlGangster:
             scene PratKlasserom
             show KarlGustav animated
             kg "Jeg så han ikke på do ista"
             jump friUtforsk
-    
-        label D1Dfellesareal:
-            call screen D1Dfellesareal
-        
-        label gangMotToalett:
-            call screen MotToalettD1
         
         label leterEtterTias:
             call screen LeterEtterTiasGang
@@ -498,4 +492,44 @@ label mordEn:
             "*du leter litt*"
             pov "Ingenting her"
             jump leterEtterTias
+        
+            label D1Dfellesareal:
+                call screen D1Dfellesareal
 
+            label gangMotToalett:
+                call screen MotToalettD1
+            
+            label Toalett:
+                call screen ToalettInteract
+            
+            label Toalett1:
+                scene toalett-tomt
+                "*du leter litt*"
+                pov "Ingenting her"
+                jump Toalett
+            
+            label Toalett2:
+                scene toalett-tomt
+                "*du leter litt*"
+                show Even twerk animated
+                pov "WTF"
+                em "Gå ut kompis!"
+                jump Toalett
+
+            label Toalett3:
+                scene toalett-tomt
+                "*du leter litt*"
+                pov "Ingenting her"
+                jump Toalett
+            
+            label ToalettDead:
+                scene tias-død
+                pov "Å dvæen!"
+                pov "Er det Tias? og er han død?!"
+                jump Hjelp
+            
+        label Hjelp:
+            scene klasserom
+            show Erik animated
+            e "Whazzehell?!"
+            e "Er Tias død på toalezzet?"
