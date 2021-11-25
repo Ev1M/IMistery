@@ -465,7 +465,10 @@ label mordEn:
     #Her kan du begynne å lete etter Tias
     label friUtforsk:
         call screen klasserom
-        
+
+        if tias_dod:
+            pov "mamma mia"
+            jump hjelp
         label Srimon:
             scene PratKlasserom
             show Srimon animated
@@ -492,9 +495,7 @@ label mordEn:
                 "*du leter litt*"
                 pov "Ingenting her"
                 jump leterEtterTias
-        if tias == "død":
-            pov "mamma mia"
-            jump hjelp
+
 
         label ImKlasseromLeter:
             scene ImKlasserom
@@ -540,9 +541,9 @@ label mordEn:
                 pov "Å dvæen!"
                 pov "Er det Tias? og er han død?!"
                 pov "SHIT! Jeg må si ifra til Erik."
-                $ tias = "død"
+                $ tias_dod = True
                 jump ToalettTre
 
         label hjelp:
             pov "TIAS ER DRUKNET PÅ DO"
-            e "HÆ!"
+            e "Det er ikke gyldig fravær!"
