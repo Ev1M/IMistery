@@ -480,7 +480,8 @@ label mordEn:
             sp "Jeg tror han gikk på do, pleier å gå med han men.."
             sp "Vent er du den nye eleven som skulle begynne her?"
             menu:
-                "Ja":
+                "Ja":¨
+                    show Srimon animated
                     sp "Holy Clean, hva heter du?"
                     menu:
                         "Jeg heter [povname]":
@@ -488,12 +489,14 @@ label mordEn:
                             sp "Har du spilt Slime Isekai memories?? Det er et kjempebra spill :)"
                             menu:
                                 "Nei, det har jeg ikke":
+                                    show Srimon animated
                                     sp "Du burde prøve det, det er kjempebra!"
                                     pov "Hva slags spill er det?"
                                     sp "Det er et Gacha game, det er designet for å snyte deg av alle pengene dine. Jeg har selv brukt rundt 3000kr på rolls for legendaries. Veldig kult spill :)."
                                     pov "Høres dyrt ut, men kanskje jeg skal prøve det"
                                     sp "worth"
                                 "så klart, jeg er level 151":
+                                    show Srimon animated
                                     sp "Seriøst! Jeg er bare level 62, hvor mye penger har du brukt på spillet."
                                     pov "Jeg solgte huset og bilen min, men det var verdt det"
                                     sp "Ja, du er jo over level 150!"
@@ -518,9 +521,11 @@ label mordEn:
             tb "Hei, du er den nye eleven?"
             menu:
                 "ja":
+                    show Titas animated
                     tb "Jeg heter Titas, hyggelig å møte deg. Har du hørt om spillet Among Us?"
                     menu:
                         "Så klart!!!":
+
                             tb "Så kult :))), jeg må si  det re ganske sus at Tias ikke er her. Lurer på hva som har skjedd med han, forhåpentligvis ikke noe dårlig hahahahaha."
                             pov "Får håpe det"
                         "Nei":
@@ -538,10 +543,12 @@ label mordEn:
             kg "Du ville snakke med meg om noe?"
             menu:
                 "Har du sett Tias noe sted her i dag?":
+                    show KarlGustav animated
                     kg "Nei, jeg har ikke sett han noe sted, han var i hvert fall ikke på do når jeg var der." 
                     kg "Jeg tror jeg så han i fellesarealet ,men jeg er ikke sikker." 
                     pov "Ok, takk for hjelpen"
                 "KG hvorfor kaller folk deg KG egentlig?":
+                    show KarlGustav animated
                     kg "Jeg fikk det kallenavnet i Vietnam, det er en forkortelse av mitt egentlige kallenavn: Killer Gangster og var et navn jeg fikk etter at jeg drepte mer enn 300 Vietnamesere i krigen."
                     pov "Akkurat, har du sett Tias noe sted her i dag?"
                     kg "Nei, jeg har ikke sett han noe sted, han var i hvert fall ikke på do når jeg var der." 
