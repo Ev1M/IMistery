@@ -83,7 +83,7 @@ screen klasserom():
         hover "klasserom_hover.jpg"
 
         hotspot (850,1336,355,200) action Jump ("Srimon")
-        hotspot (1266,1208,327,193) action Jump ("Arin")
+        hotspot (1266,1208,327,193) action Jump ("Titas")
         hotspot (2157,1141,327,202) action Jump ("KarlGangster")
         hotspot (1441,1843,419,371) action Jump ("gangMotToalett")
 
