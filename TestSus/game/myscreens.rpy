@@ -14,13 +14,14 @@ screen D1Mfellesareal():
         hotspot(2679, 315, 425, 977) action Jump("idleEtterHeis") alt "idleEtterHeis"
         hotspot(1250, 1400, 1041, 300) action Jump("BordEn") alt "BordEn"
 
-screen AEJVbord() :
+screen AJVEBord() :
     imagemap:
-        ground "AEJVbordTest.jpg"
-        hotspot(186,881,513,607) action Jump("Aslak") alt "Aslak"
-        hotspot(861,918,503,550) action Jump("Even") alt "Even"
-        hotspot(1549,918,510,567) action Jump("Vilmer") alt "Vilmer"
-        hotspot(2511,921,540,557) action Jump("Jonas") alt "Jonas"
+        ground "AJVEBord.png"
+        hover "AJVEBord_hover.png"
+        hotspot (2940,246,438,365) action Jump("Aslak") alt "Aslak"
+        hotspot (2174,226,566,365) action Jump("Jonas") alt "Jonas"
+        hotspot (1272,145,520,314) action Jump("Vilmer") alt "Vilmer"
+        hotspot (587,209,483,355) action Jump("Even") alt "Even"
 
 screen D1Dfellesareal():
     imagemap:

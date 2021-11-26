@@ -261,10 +261,13 @@ image Tias animated:
 #Intro
 
 label start:
+    hmm "I dette spillet kan man trykke på mye skjult, så trykk I vei hvis du vill finne alt!"
+    $ tias_dod = False
     scene bg heisaapen
     show Christian animated
     voice "audio/gibberish_sound_effect.mp3"
-    c "Heisann, velkommen til Kuben’s Informatikk linje. Så hyggelig at du ville starte hos oss. Gå til "
+    c "hei hei, Christian heter jeg, velkommen til IM!"
+    c "så utrolig hyggelig at du ville starte her hos oss, la meg vise deg litt rundt på avdelingen."
     hide Christian animated
 
 #Kan gå hvor man vil
@@ -288,7 +291,7 @@ label idleEtterHeis:
 
         #Bordet hvor Aslak, Even, Jonas og Vilmer sitter.
         label BordEn: 
-            call screen AEJVbord
+            call screen AJVEBord
             label Aslak:
                 scene fellesareal
                 hide Christian animated
@@ -420,7 +423,7 @@ label idleEtterHeis:
             
 #Her starter sekvesen for å finne Tias død
 label mordEn:
-    scene utenforklasserommet
+    scene bg ToalettEn
     #Prat mellom KG og Christian
     show Christian animated at midleft
     c "Inn her er toalettene, det kan være greit å vite i tilfelle …"
@@ -464,7 +467,7 @@ label mordEn:
     
     #Her kan du begynne å lete etter Tias
     label friUtforsk:
-        $ tias_dod        
+  
         if tias_dod:
             scene klasserom
             pov "mamma mia"
@@ -480,7 +483,7 @@ label mordEn:
             sp "Jeg tror han gikk på do, pleier å gå med han men.."
             sp "Vent er du den nye eleven som skulle begynne her?"
             menu:
-                "Ja":¨
+                "Ja":
                     show Srimon animated
                     sp "Holy Clean, hva heter du?"
                     menu:
@@ -619,7 +622,8 @@ label mordEn:
             menu:
                 "Han er død på do!!!":
                     show Erik animated
-                    e "Hva er du snakker om [povname], stopp å tulle! Du kan ikke spøke med sånt, det er ikke greit."
+                    e "Det er ikke gyldig fravær!"
+                    e "Men hva er du snakker om [povname], stopp å tulle! Du kan ikke spøke med sånt, det er ikke greit."
                     pov "Nei, jeg er seriøs. Tias er faktisk død på do!"
                     e "Jeg kan ikke tro at du ville tulle om noe sånt [povname], gå og sett deg på plassen din!"
                     menu: 
@@ -655,12 +659,14 @@ label mordEn:
                 "Nei, jeg fant han ikke.":
                     e "Ok, gå å sett deg [povname]"
                     pov "Yessir"
+                    hide Erik animated
                     jump gameover
-            e "Det er ikke gyldig fravær!"
+
 
 label poker:
     "*går til fellesareale*"
     scene fellesareal
+    show Vilmer animated
     vh "Hei [povname], blir du med på Poker?"
     menu: 
         "ja":
@@ -673,6 +679,7 @@ label poker:
             jump dag2
 
         "Nei, jeg går å legger meg":
+            hide Vilmer animated
             "*etter en lang dag får du endelig sovet*"
             jump dag2
 
