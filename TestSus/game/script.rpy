@@ -529,7 +529,8 @@ label mordEn:
                     menu:
                         "Så klart!!!":
 
-                            tb "Så kult :))), jeg må si  det re ganske sus at Tias ikke er her. Lurer på hva som har skjedd med han, forhåpentligvis ikke noe dårlig hahahahaha."
+                            tb "Så kult :))), jeg må si  det er ganske sus at Tias ikke er her."
+                            tb "Lurer på hva som har skjedd med han, forhåpentligvis ikke noe dårlig hahahahaha."
                             pov "Får håpe det"
                         "Nei":
                             "*Titas sitt entusiastiske smil forsvinner, han ser på deg med et blikk av forakt og hat*"
@@ -552,7 +553,8 @@ label mordEn:
                     pov "Ok, takk for hjelpen"
                 "KG hvorfor kaller folk deg KG egentlig?":
                     show KarlGustav animated
-                    kg "Jeg fikk det kallenavnet i Vietnam, det er en forkortelse av mitt egentlige kallenavn: Killer Gangster og var et navn jeg fikk etter at jeg drepte mer enn 300 Vietnamesere i krigen."
+                    kg "Jeg fikk det kallenavnet i Vietnam, det er en forkortelse av mitt egentlige kallenavn:"
+                    kg "Killer Gangster og var et navn jeg fikk etter at jeg drepte mer enn 300 Vietnamesere i krigen."
                     pov "Akkurat, har du sett Tias noe sted her i dag?"
                     kg "Nei, jeg har ikke sett han noe sted, han var i hvert fall ikke på do når jeg var der." 
                     kg "Jeg tror jeg så han i fellesarealet ,men jeg er ikke sikker." 
@@ -633,12 +635,16 @@ label mordEn:
                             pov "unnskyld"
                             jump gameover
                         "Men det er sant, noen har druknet Tias på doen!":
-                            show Erik animated
+                            show Erik animated at midright
                             e "Hvorfor ville noen gjøre noe sånt? Det er ikke mulig."
                             "*Erik går ut av klasserommet og mot toalettene, du følger han bort dit. Han går til den åpne doen og ser inn*"
                             e "Tias! Hvem kunne gjort dette. Stakkars, og i doen av alle steder… Gå tilbake til klasserommet [povname] og vent på meg, jeg må diskutere dette med Christian."
                             "*Du går tilbake til klasserommet, Christian og Erik kommer inn*"
-                            c "Alle sammen, jeg har noen forferdelig nyheter, Tias har blitt druknet på do av noen her på IMI. Jeg har prøvd å ringe politiet, men de trodde ikke på at noen hadde blitt druknet i et toalett så de kommer ikke. Derfor må vi løse dette problemet her på IMI. Til vi har funnet ut hvem det var som drepte Tias så kan ingen forlate IM avdelingen. Det var alt, ha en fin lunsj :)."
+                            show Christian animated at midleft
+                            c "Alle sammen, jeg har noen forferdelig nyheter, Tias har blitt druknet på do av noen her på IMI." 
+                            c "Jeg har prøvd å ringe politiet, men de trodde ikke på at noen hadde blitt druknet i et toalett så de kommer ikke."
+                            c " Derfor må vi løse dette problemet her på IMI."
+                            c "Til vi har funnet ut hvem det var som drepte Tias så kan ingen forlate IM avdelingen. Det var alt, ha en fin lunsj :)."
                             "*De fleste forlater klasserommet, Srimon er igjen og er mulig å snakke med*"
                             hide Erik animated
                             menu:
@@ -674,7 +680,8 @@ label poker:
             pov "takk"
             vh "Jeg er dealer, Even, Jonas, Titas og Aslak er spillere som deg."
             "*Du spiller i en god stund*"
-            vh "Du var veldig dårlig [povname], vant ikke en eneste rundt. Tror du burde gå og legge deg så du kan roe deg ned litt, du virker litt frustrert."
+            vh "Du var veldig dårlig [povname], vant ikke en eneste rundt."
+            vh "Tror du burde gå og legge deg så du kan roe deg ned litt, du virker litt frustrert."
             "*etter en lang dag får du endelig sovet*"
             jump dag2
 
