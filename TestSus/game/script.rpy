@@ -385,6 +385,7 @@ label idleEtterHeis:
                     xalign 0.3
                     ycenter 0.639
                 vh "check out the shuffle *stokker kort*"
+                hide Armsfv
                 hide Shuffle
                 menu: 
                     "imponerende":
