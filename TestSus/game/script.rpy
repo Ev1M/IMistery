@@ -1,5 +1,4 @@
-﻿# define characters
-define pov = Character("[povname]")
+﻿define pov = Character("[povname]")
 define hmm = Character("?????")
 define c = Character("Christian")
 define e = Character("Erik")
@@ -231,7 +230,7 @@ image Titas animated:
     block:
         "titas/titasTalk.png"
         pause 0.15
-        "titas/titasTalk.png"
+        "titas/titasTalk2.png"
         pause 0.1
         repeat 12
     "titas/titasTalk.png"
@@ -262,10 +261,13 @@ image Tias animated:
 #Intro
 
 label start:
+    hmm "I dette spillet kan man trykke på mye skjult, så trykk I vei hvis du vill finne alt!"
+    $ tias_dod = False
     scene bg heisaapen
     show Christian animated
     voice "audio/gibberish_sound_effect.mp3"
-    c "Heisann, velkommen til Kuben’s Informatikk linje. Så hyggelig at du ville starte hos oss. Gå til "
+    c "hei hei, Christian heter jeg, velkommen til IM!"
+    c "så utrolig hyggelig at du ville starte her hos oss, la meg vise deg litt rundt på avdelingen."
     hide Christian animated
 
 #Kan gå hvor man vil
@@ -289,7 +291,7 @@ label idleEtterHeis:
 
         #Bordet hvor Aslak, Even, Jonas og Vilmer sitter.
         label BordEn: 
-            call screen AEJVbord
+            call screen AJVEBord
             label Aslak:
                 scene fellesareal
                 hide Christian animated
@@ -385,7 +387,7 @@ label idleEtterHeis:
                     xalign 0.3
                     ycenter 0.639
                 vh "check out the shuffle *stokker kort*"
-                hide Armsfv
+                hide Arms
                 hide Shuffle
                 menu: 
                     "imponerende":
@@ -421,7 +423,7 @@ label idleEtterHeis:
             
 #Her starter sekvesen for å finne Tias død
 label mordEn:
-    scene utenforklasserommet
+    scene bg ToalettEn
     #Prat mellom KG og Christian
     show Christian animated at midleft
     c "Inn her er toalettene, det kan være greit å vite i tilfelle …"
@@ -465,31 +467,100 @@ label mordEn:
     
     #Her kan du begynne å lete etter Tias
     label friUtforsk:
+  
+        if tias_dod:
+            scene klasserom
+            pov "mamma mia"
+            jump hjelp
         call screen klasserom
-        
+    
+
+
         label Srimon:
-            scene PratKlasserom
+            scene klasserom
             show Srimon animated
             pov "har du sett Tias?"
-            sp "Jeg tror han gikk på do"
+            sp "Jeg tror han gikk på do, pleier å gå med han men.."
+            sp "Vent er du den nye eleven som skulle begynne her?"
+            menu:
+                "Ja":
+                    show Srimon animated
+                    sp "Holy Clean, hva heter du?"
+                    menu:
+                        "Jeg heter [povname]":
+                            sp "nice"
+                            sp "Har du spilt Slime Isekai memories?? Det er et kjempebra spill :)"
+                            menu:
+                                "Nei, det har jeg ikke":
+                                    show Srimon animated
+                                    sp "Du burde prøve det, det er kjempebra!"
+                                    pov "Hva slags spill er det?"
+                                    sp "Det er et Gacha game, det er designet for å snyte deg av alle pengene dine. Jeg har selv brukt rundt 3000kr på rolls for legendaries. Veldig kult spill :)."
+                                    pov "Høres dyrt ut, men kanskje jeg skal prøve det"
+                                    sp "worth"
+                                "så klart, jeg er level 151":
+                                    show Srimon animated
+                                    sp "Seriøst! Jeg er bare level 62, hvor mye penger har du brukt på spillet."
+                                    pov "Jeg solgte huset og bilen min, men det var verdt det"
+                                    sp "Ja, du er jo over level 150!"
+                                    pov "Akkurat"
+                                
+                        "Sier ikke!":
+                            "fuck deg"
+
+                "Nei":
+                    sp "Du skal ikke gå her? Hva gjør du her da?"
+                    menu:
+                        "Jeg er på Besøk":
+                            sp "oh cool.."
+                        "*snikk unna*":
+                            sp "*ser rundt i forviring*"
+
             jump friUtforsk
         
-        label Arin:
-            scene PratKlasserom
-            show Arin animated
-            al "Jeg tror han dro på kiwi med Peder"
+        label Titas:
+            scene klasserom
+            show Titas animated
+            tb "Hei, du er den nye eleven?"
+            menu:
+                "ja":
+                    show Titas animated
+                    tb "Jeg heter Titas, hyggelig å møte deg. Har du hørt om spillet Among Us?"
+                    menu:
+                        "Så klart!!!":
+
+                            tb "Så kult :))), jeg må si  det er ganske sus at Tias ikke er her."
+                            tb "Lurer på hva som har skjedd med han, forhåpentligvis ikke noe dårlig hahahahaha."
+                            pov "Får håpe det"
+                        "Nei":
+                            "*Titas sitt entusiastiske smil forsvinner, han ser på deg med et blikk av forakt og hat*"
+                            tb "Ikke snakk til meg." 
+                "Nei":
+                    "*Titas sitt entusiastiske smil forsvinner, han ser på deg med et blikk av forakt og hat*"
+                    tb "Ikke snakk til meg."
+
             jump friUtforsk
+
         label KarlGangster:
-            scene PratKlasserom
+            scene klasserom
             show KarlGustav animated
-            kg "Jeg så han ikke på do ista"
+            kg "Du ville snakke med meg om noe?"
+            menu:
+                "Har du sett Tias noe sted her i dag?":
+                    show KarlGustav animated
+                    kg "Nei, jeg har ikke sett han noe sted, han var i hvert fall ikke på do når jeg var der." 
+                    kg "Jeg tror jeg så han i fellesarealet ,men jeg er ikke sikker." 
+                    pov "Ok, takk for hjelpen"
+                "KG hvorfor kaller folk deg KG egentlig?":
+                    show KarlGustav animated
+                    kg "Jeg fikk det kallenavnet i Vietnam, det er en forkortelse av mitt egentlige kallenavn:"
+                    kg "Killer Gangster og var et navn jeg fikk etter at jeg drepte mer enn 300 Vietnamesere i krigen."
+                    pov "Akkurat, har du sett Tias noe sted her i dag?"
+                    kg "Nei, jeg har ikke sett han noe sted, han var i hvert fall ikke på do når jeg var der." 
+                    kg "Jeg tror jeg så han i fellesarealet ,men jeg er ikke sikker." 
+                    pov "Ok, takk for hjelpen"
+
             jump friUtforsk
-    
-        label D1Dfellesareal:
-            call screen D1Dfellesareal
-        
-        label gangMotToalett:
-            call screen MotToalettD1
         
         label leterEtterTias:
             call screen LeterEtterTiasGang
@@ -499,9 +570,128 @@ label mordEn:
                 pov "Ingenting her"
                 jump leterEtterTias
 
+
         label ImKlasseromLeter:
             scene ImKlasserom
             "*du leter litt*"
             pov "Ingenting her"
             jump leterEtterTias
+        
+            label D1Dfellesareal:
+                call screen D1Dfellesareal
 
+            label gangMotToalett:
+                call screen MotToalettD1
+            
+            label ToalettEn:
+                call screen toalettEn
+            label ToalettTo:
+                call screen toalettTo
+            label ToalettTre:
+                call screen toalettTre
+
+            label Toalett1:
+                scene toalett-tomt
+                "*du leter litt*"
+                pov "Ingenting her"
+                jump ToalettTre
+            
+            label Toalett2:
+                scene toalett-tomt
+                "*du leter litt*"
+                show Even twerk animated
+                pov "WTF"
+                em "Gå ut kompis!"
+                jump ToalettTre
+
+            label Toalett3:
+                scene toalett-tomt
+                "*du leter litt*"
+                pov "Ingenting her"
+                jump ToalettTre
+            
+            label ToalettDead:
+                scene tias-død
+                pov "Å dvæen!"
+                pov "Er det Tias? og er han død?!"
+                pov "SHIT! Jeg må si ifra til Erik."
+                $ tias_dod = True
+                jump ToalettTre
+
+        label hjelp:
+            show Erik animated
+            e "Har du funnet Tias [povname]?"
+            menu:
+                "Han er død på do!!!":
+                    show Erik animated
+                    e "Det er ikke gyldig fravær!"
+                    e "Men hva er du snakker om [povname], stopp å tulle! Du kan ikke spøke med sånt, det er ikke greit."
+                    pov "Nei, jeg er seriøs. Tias er faktisk død på do!"
+                    e "Jeg kan ikke tro at du ville tulle om noe sånt [povname], gå og sett deg på plassen din!"
+                    menu: 
+                        "Ok...":
+                            show Erik animated
+                            e "Aldri tull om noe sånt igjen."
+                            pov "unnskyld"
+                            jump gameover
+                        "Men det er sant, noen har druknet Tias på doen!":
+                            show Erik animated at midright
+                            e "Hvorfor ville noen gjøre noe sånt? Det er ikke mulig."
+                            "*Erik går ut av klasserommet og mot toalettene, du følger han bort dit. Han går til den åpne doen og ser inn*"
+                            e "Tias! Hvem kunne gjort dette. Stakkars, og i doen av alle steder… Gå tilbake til klasserommet [povname] og vent på meg, jeg må diskutere dette med Christian."
+                            "*Du går tilbake til klasserommet, Christian og Erik kommer inn*"
+                            show Christian animated at midleft
+                            c "Alle sammen, jeg har noen forferdelig nyheter, Tias har blitt druknet på do av noen her på IMI." 
+                            c "Jeg har prøvd å ringe politiet, men de trodde ikke på at noen hadde blitt druknet i et toalett så de kommer ikke."
+                            c " Derfor må vi løse dette problemet her på IMI."
+                            c "Til vi har funnet ut hvem det var som drepte Tias så kan ingen forlate IM avdelingen. Det var alt, ha en fin lunsj :)."
+                            "*De fleste forlater klasserommet, Srimon er igjen og er mulig å snakke med*"
+                            hide Erik animated
+                            menu:
+                                "Snakk med Srimon":
+                                    show Srimon animated
+                                    sp "Hvordan kunne dette ha skjedd, jeg snakket jo med han før skolen i dag og nå er død :("
+                                    pov "Det er en tragedie, jeg tror jeg går og legger meg."
+                                    menu:
+                                        "Gå ut i fellesarealet":
+                                            jump poker
+                                        "legg deg":
+                                            "*etter en lang dag får du endelig sovet*"
+                                            jump dag2
+                                "Gå ut i fellesarealet":
+                                    jump poker
+
+
+                "Nei, jeg fant han ikke.":
+                    e "Ok, gå å sett deg [povname]"
+                    pov "Yessir"
+                    hide Erik animated
+                    jump gameover
+
+
+label poker:
+    "*går til fellesareale*"
+    scene fellesareal
+    show Vilmer animated
+    vh "Hei [povname], blir du med på Poker?"
+    menu: 
+        "ja":
+            vh "Nice, du kan sette deg her, dette er chipsene dine"
+            pov "takk"
+            vh "Jeg er dealer, Even, Jonas, Titas og Aslak er spillere som deg."
+            "*Du spiller i en god stund*"
+            vh "Du var veldig dårlig [povname], vant ikke en eneste rundt."
+            vh "Tror du burde gå og legge deg så du kan roe deg ned litt, du virker litt frustrert."
+            "*etter en lang dag får du endelig sovet*"
+            jump dag2
+
+        "Nei, jeg går å legger meg":
+            hide Vilmer animated
+            "*etter en lang dag får du endelig sovet*"
+            jump dag2
+
+label gameover:
+    scene gameover
+    hmm "Wow, tenk å være så dum."
+    "*Du døde en treg og smertefull død*"
+    "..."
